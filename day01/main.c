@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:50:12 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/01 20:54:32 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/01 23:22:15 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(void)
 	t_list	*list1;
 	t_list	*list2;
 
-	fd = open("/home/ele-lean/adventofcode/day_one/ex1/input.txt", O_RDONLY);
+	fd = open("day01/input.txt", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_printf("Error opening file\n");
@@ -74,7 +74,7 @@ int	main(void)
 	get_list(&list1, &list2, fd);
 	sort_list(&list1);
 	sort_list(&list2);
-	ft_printf("%d\n%d", compute_result(list1, list2),
+	ft_printf("Part 1: %d\nPart 2: %d\n", compute_result(list1, list2),
 		compute_result2(list1, list2));
 	close(fd);
 	free_list(list1);
