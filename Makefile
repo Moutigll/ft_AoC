@@ -8,7 +8,7 @@ EXEC = all.out
 all: $(NAME)
 
 
-$(NAME):
+$(NAME): clean
 	@echo "Entering $(SRC_DIR) directory"
 	@make -C $(SRC_DIR)
 	@mv $(SRC_DIR)/$(NAME) .
@@ -16,7 +16,7 @@ $(NAME):
 
 clean:
 	@make -C libft clean
-	@rm -f 01
+	@rm -f 01 02
 
 fclean: clean
 	@make -C libft fclean
