@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:28:53 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/10/16 16:48:51 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/03 06:47:36 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new_element;
+	t_list	*new;
 
-	new_element = (t_list *)malloc(sizeof(t_list));
-	if (!new_element)
-		return (0);
-	new_element->content = content;
-	new_element->next = 0;
-	return (new_element);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
