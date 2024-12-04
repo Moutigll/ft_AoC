@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 06:02:18 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/04 08:00:11 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/04 08:40:36 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,34 @@ t_list	*gli(t_list *lst, int index)
 	return (lst);
 }
 
+int	count_xmas_in_x(char **grid, int rows, int cols)
+{
+	int	count;
+	int	x;
+	int	y;
+
+	count = 0;
+	y = 1;
+	while (y < rows - 1)
+	{
+		x = 1;
+		while (x < cols - 1)
+		{
+			if (grid[y][x] == 'A')
+			{
+				if (((grid[y - 1][x - 1] == 'M' && grid[y + 1][x + 1] == 'S') ||
+					(grid[y - 1][x - 1] == 'S' && grid[y + 1][x + 1] == 'M')) &&
+					((grid[y - 1][x + 1] == 'M' && grid[y + 1][x - 1] == 'S') ||
+					(grid[y - 1][x + 1] == 'S' && grid[y + 1][x - 1] == 'M')))
+					count++;
+			}
+			x++;
+		}
+		y++;
+	}
+	return (count);
+}
+
 void	main2(t_list *list)
 {
 	int		rows;
@@ -49,6 +77,7 @@ void	main2(t_list *list)
 		i++;
 	}
 	ft_printf("Result: %d\n", count_xmas(grid, rows, cols));
+	ft_printf("Result: %d\n", count_xmas_in_x(grid, rows, cols));
 	free(grid);
 }
 

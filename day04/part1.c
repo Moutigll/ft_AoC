@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 07:29:57 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/04 07:56:58 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/04 08:28:05 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	init_directions(t_direction directions[8])
 	directions[7].dj = 1;
 }
 
-// Fonction pour vérifier si "XMAS" est trouvé dans une direction donnée
 int	find_xmas_in_direction(t_grid grid_info, int i, int j, t_direction dir)
 {
 	int	k;
@@ -72,7 +71,6 @@ int	process_cell(t_grid grid_info, int i, int j, t_direction directions[8])
 	return (count);
 }
 
-// Fonction pour compter toutes les occurrences de "XMAS"
 int	count_xmas(char **grid, int rows, int cols)
 {
 	int			count;
