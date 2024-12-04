@@ -16,7 +16,7 @@ $(NAME): clean
 
 clean:
 	@make -C libft clean
-	@rm -f 01 02 03
+	@rm -f 01 02 03 04
 
 fclean: clean
 	@make -C libft fclean
