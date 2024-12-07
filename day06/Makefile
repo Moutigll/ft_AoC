@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I../libft/include
-SRC = main.c compute_part1.c compute_part2.c
+SRC = main.c utils.c compute.c browse_path.c
 LIBFT = ../libft/libft.a
 
 all: $(LIBFT) 06

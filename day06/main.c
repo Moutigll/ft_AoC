@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:36:32 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/07 00:23:52 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/07 03:21:51 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,19 @@ void	free_map(char **map)
 		i++;
 	}
 	free(map);
+}
+
+void	free_list(t_list *list)
+{
+	t_list	*tmp;
+
+	while (list)
+	{
+		tmp = list;
+		list = list->next;
+		free(tmp->content);
+		free(tmp);
+	}
 }
 
 int	get_len(void)
