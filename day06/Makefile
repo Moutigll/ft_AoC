@@ -1,12 +1,12 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I../libft/include
-SRC = main.c parsing.c part2.c
+SRC = main.c compute_part1.c compute_part2.c
 LIBFT = ../libft/libft.a
 
-all: $(LIBFT) 05
+all: $(LIBFT) 06
 
-05: $(SRC) $(LIBFT)
-	$(CC) $(CFLAGS) $(SRC) -o 05 $(LIBFT)
+06: $(SRC) $(LIBFT)
+	$(CC) $(CFLAGS) $(SRC) -o 06 $(LIBFT)
 
 $(LIBFT):
 	@make -C ../libft
@@ -16,7 +16,7 @@ clean:
 	@make -C ../libft clean
 
 fclean: clean
-	rm -f 05
+	rm -f 06
 	@make -C ../libft fclean
 
 re: fclean all
