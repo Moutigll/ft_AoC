@@ -6,17 +6,18 @@
 #    By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 14:24:19 by ele-lean          #+#    #+#              #
-#    Updated: 2024/11/16 14:45:50 by ele-lean         ###   ########.fr        #
+#    Updated: 2024/12/07 22:57:46 by ele-lean         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE_DIR)
+CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE_DIR) -fPIC
 NAME = libft.a
 
 PART1_DIR = ft/part1
 PART2_DIR = ft/part2
 PART_BONUS_DIR = ft/bonus
+PART_EXTRA_DIR = ft/extra
 PART_PRINTF_DIR = ft_printf
 PART_GET_NEXT_LINE_DIR = get_next_line
 INCLUDE_DIR = include
@@ -34,6 +35,8 @@ PART_BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 				  ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 				  ft_lstmap.c
 
+PART_EXTRA_SRCS = ft_atol.c ft_tablen.c
+
 PART_PRINTF_SRCS = ft_printf.c utils.c print_args.c print_argsbis.c manage_flags.c
 
 PART_GET_NEXT_LINE_SRCS = get_next_line.c get_next_line_utils.c
@@ -41,10 +44,11 @@ PART_GET_NEXT_LINE_SRCS = get_next_line.c get_next_line_utils.c
 PART1_OBJS = $(addprefix $(PART1_DIR)/, $(PART1_SRCS:.c=.o))
 PART2_OBJS = $(addprefix $(PART2_DIR)/, $(PART2_SRCS:.c=.o))
 PART_BONUS_OBJS = $(addprefix $(PART_BONUS_DIR)/, $(PART_BONUS_SRCS:.c=.o))
+PART_EXTRA_OBJS = $(addprefix $(PART_EXTRA_DIR)/, $(PART_EXTRA_SRCS:.c=.o))
 PART_PRINTF_OBJS = $(addprefix $(PART_PRINTF_DIR)/, $(PART_PRINTF_SRCS:.c=.o))
 PART_GET_NEXT_LINE_OBJS = $(addprefix $(PART_GET_NEXT_LINE_DIR)/, $(PART_GET_NEXT_LINE_SRCS:.c=.o))
 
-OBJS = $(PART1_OBJS) $(PART2_OBJS) $(PART_BONUS_OBJS) $(PART_PRINTF_OBJS) $(PART_GET_NEXT_LINE_OBJS)
+OBJS = $(PART1_OBJS) $(PART2_OBJS) $(PART_BONUS_OBJS) $(PART_EXTRA_OBJS) $(PART_PRINTF_OBJS) $(PART_GET_NEXT_LINE_OBJS)
 
 all: $(NAME)
 

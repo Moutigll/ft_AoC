@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I libft/include
+CFLAGS = -Wall -Werror -Wextra -fPIE -I libft/include
 LIBFT = libft/libft.a
 NAME = $(DAY)
 SRC_DIR = day$(DAY)
@@ -16,7 +16,7 @@ $(NAME): clean
 
 clean:
 	@make -C libft clean
-	@rm -f 01 02 03 04 05 06
+	@rm -f 01 02 03 04 05 06 07
 
 fclean: clean
 	@make -C libft fclean

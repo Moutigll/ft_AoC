@@ -6,9 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:38:56 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/07 03:22:50 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:53:43 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include <fcntl.h>
 #include <stdio.h>
