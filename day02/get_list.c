@@ -6,29 +6,21 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 19:42:12 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/03 07:01:40 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/08 06:30:16 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	free_tab(char **tab)
+void	free_list_element(void *ptr)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
+	free_tab(ptr);
 }
 
 void	clean_exit(t_list *list, int fd)
 {
 	close(fd);
-	free_list(list);
+	ft_lstclear(&list, &free_list_element);
 	exit(1);
 }
 

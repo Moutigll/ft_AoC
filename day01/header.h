@@ -14,12 +14,10 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <fcntl.h>
 #include <stdio.h>
 #include "libft.h"
 
 void	get_list(t_list **list1, t_list **list2, int fd);
-void	free_list(t_list *list);
 void	clean_exit(t_list *list1, t_list *list2, int fd);
 int		compute_result(t_list *list1, t_list *list2);
 int		compute_result2(t_list *list1, t_list *list2);

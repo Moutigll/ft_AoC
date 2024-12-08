@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 06:20:55 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/08 06:56:31 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/12/08 06:12:40 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/12/08 06:12:51 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
 #include "libft.h"
 
-#define WORD "XMAS"
-#define WORD_LEN 4
-
-typedef struct s_direction
+void	free_tab(void **tab)
 {
-	int	di;
-	int	dj;
-}	t_direction;
+	int	i;
 
-typedef struct s_grid
-{
-	char	**grid;
-	int		rows;
-	int		cols;
-}	t_grid;
-
-int	count_xmas(char **grid, int rows, int cols);
+	if (!tab)
+		return ;
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}

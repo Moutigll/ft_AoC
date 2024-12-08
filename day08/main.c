@@ -5,36 +5,56 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 16:36:32 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/08 06:50:31 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/12/08 06:01:29 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/12/08 07:06:21 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	main(void)
+char	**read_map(int fd, int height)
 {
-	int		fd;
-	int		i;
-	char	*line;
 	char	**map;
+	char	*line;
+	int		i;
 
-	map = malloc(sizeof(char *) * (ft_getnline("day06/input.txt") + 1));
+	map = malloc(sizeof(char *) * (height + 1));
 	if (!map)
-		return (1);
+	{
+		printf("Error\n");
+		return (NULL);
+	}
 	i = 0;
-	fd = open("day06/input.txt", O_RDONLY);
 	line = get_next_line(fd);
-	if (fd == -1)
-		return ((free_tab((void **)map)), 1);
-	while (line != NULL)
+	while (line)
 	{
 		map[i] = line;
-		line = get_next_line(fd);
 		i++;
+		line = get_next_line(fd);
 	}
 	map[i] = NULL;
-	compute_loop(map);
+	return (map);
+}
+
+int	main(void)
+{
+	char	**map;
+	int		fd;
+	int		height;
+
+	height = ft_getnline("day08/input.txt");
+	fd = open("day08/input.txt", O_RDONLY);
+	if (fd == -1)
+		return ((printf("Error: Unable to open the file.\n")), 1);
+	map = read_map(fd, height);
+	if (!map)
+		return ((close(fd)), 1);
+	int	i = 0;
+	while (map[i])
+	{
+		ft_printf("%s\n", map[i]);
+		i++;
+	}
 	close(fd);
 	free_tab((void **)map);
 	return (0);

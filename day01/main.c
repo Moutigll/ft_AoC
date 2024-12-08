@@ -6,24 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:50:12 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/02 14:43:27 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/08 06:22:23 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-void	free_list(t_list *list)
-{
-	t_list	*tmp;
-
-	while (list)
-	{
-		tmp = list;
-		list = list->next;
-		free(tmp->content);
-		free(tmp);
-	}
-}
 
 void	clean_exit(t_list *list1, t_list *list2, int fd)
 {

@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_getnline.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 06:20:55 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/08 06:56:31 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/12/08 06:36:32 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/12/08 06:46:36 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
 #include "libft.h"
 
-#define WORD "XMAS"
-#define WORD_LEN 4
-
-typedef struct s_direction
+int	ft_getnline(char *file)
 {
-	int	di;
-	int	dj;
-}	t_direction;
+	int		fd;
+	char	*line;
+	int		n;
 
-typedef struct s_grid
-{
-	char	**grid;
-	int		rows;
-	int		cols;
-}	t_grid;
-
-int	count_xmas(char **grid, int rows, int cols);
+	fd = open(file, O_RDONLY);
+	if (fd < 0)
+		return (-1);
+	line = get_next_line(fd);
+	n = 0;
+	while (line)
+	{
+		n++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	close(fd);
+	return (n);
+}

@@ -6,24 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 06:02:18 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/04 08:40:36 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/08 06:20:10 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-void	free_list(t_list *list)
-{
-	t_list	*tmp;
-
-	while (list)
-	{
-		tmp = list;
-		list = list->next;
-		free(tmp->content);
-		free(tmp);
-	}
-}
 
 t_list	*gli(t_list *lst, int index)
 {

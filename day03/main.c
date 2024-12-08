@@ -6,11 +6,10 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:34:22 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/03 09:08:46 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/08 06:56:40 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
 #include "libft.h"
 
 char	*get_next_mul(char *str, int mode)

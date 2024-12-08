@@ -6,37 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 06:34:09 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/05 09:33:22 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/08 06:32:05 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-void	free_tab(char **tab)
-{
-	int	i;
-
-	if (tab != NULL)
-	{
-		i = 0;
-		while (tab[i] != NULL)
-		{
-			free(tab[i]);
-			i++;
-		}
-		free(tab);
-	}
-}
-
-int	len_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-		i++;
-	return (i);
-}
 
 void	parse_rules(t_list **rules, int fd)
 {
@@ -54,7 +28,7 @@ void	parse_rules(t_list **rules, int fd)
 			tab[0] = ft_atoi(split_line[0]);
 			tab[1] = ft_atoi(split_line[1]);
 			ft_lstadd_back(rules, ft_lstnew(tab));
-			free_tab(split_line);
+			free_tab((void **)split_line);
 		}
 		free(line);
 		line = get_next_line(fd);
@@ -75,7 +49,7 @@ void	parse_updates(t_list **updates, int fd)
 		split_line = ft_split(line, ',');
 		if (split_line != NULL)
 		{
-			tab = malloc(sizeof(int) * (len_tab(split_line) + 1));
+			tab = malloc(sizeof(int) * (ft_tablen((void **)split_line) + 1));
 			i = 0;
 			while (split_line[i])
 			{
@@ -84,7 +58,7 @@ void	parse_updates(t_list **updates, int fd)
 			}
 			tab[i] = -1;
 			ft_lstadd_back(updates, ft_lstnew(tab));
-			free_tab(split_line);
+			free_tab((void **)split_line);
 		}
 		free(line);
 		line = get_next_line(fd);

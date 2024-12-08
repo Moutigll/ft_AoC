@@ -6,24 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 06:28:58 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/05 10:16:34 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/08 06:16:58 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-void	free_list(t_list *list)
-{
-	t_list	*tmp;
-
-	while (list)
-	{
-		tmp = list;
-		list = list->next;
-		free(tmp->content);
-		free(tmp);
-	}
-}
 
 int	get_position(int *tab, int n)
 {

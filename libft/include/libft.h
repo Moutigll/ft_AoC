@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:47:48 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/12/07 22:57:19 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/12/08 06:47:00 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 typedef struct s_list
 {
@@ -75,6 +76,9 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 long			ft_atol(const char *str);
 int				get_sign(const char **str);
 int				ft_tablen(void **tab);
+void			free_tab(void **tab);
+void			free_list(t_list *list);
+int				ft_getnline(char *file);
 
 //PRINTF
 int				ft_printf(const char *str, ...);
