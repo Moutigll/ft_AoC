@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I../libft/include
-SRC = main.c
+SRC = main.c utils.c
 LIBFT = ../libft/libft.a
 
 all: $(LIBFT) 09
@@ -16,7 +16,7 @@ clean:
 	@make -C ../libft clean
 
 fclean: clean
-	rm -f 10
+	rm -f 09
 	@make -C ../libft fclean
 
 re: fclean all

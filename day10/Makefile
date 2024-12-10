@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I../libft/include
-SRC = main.c
+SRC = main.c utils.c
 LIBFT = ../libft/libft.a
 
 all: $(LIBFT) 10
