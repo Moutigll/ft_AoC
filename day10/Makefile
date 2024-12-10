@@ -3,10 +3,10 @@ CFLAGS = -Wall -Werror -Wextra -I../libft/include
 SRC = main.c
 LIBFT = ../libft/libft.a
 
-all: $(LIBFT) 09
+all: $(LIBFT) 10
 
-09: $(SRC) $(LIBFT)
-	$(CC) $(CFLAGS) $(SRC) -o 09 $(LIBFT)
+10: $(SRC) $(LIBFT)
+	$(CC) $(CFLAGS) $(SRC) -o 10 $(LIBFT)
 
 $(LIBFT):
 	@make -C ../libft
